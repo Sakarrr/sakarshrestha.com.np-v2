@@ -5,9 +5,21 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sakar Shrestha</title>
+    <link rel="stylesheet" href="/loader.css" />
   </head>
-  <body>
+  <body class="loading">
+    <div id="loader" aria-hidden="true">
+      <div class="loader-inner">
+        <div class="loader-row">
+          <span>Sakar Shrestha</span>
+          <span class="loader-right" id="loader-pct">0%</span>
+        </div>
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="/loader.js"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Sidebar } from "./components/Sidebar.jsx";
 import { Hero } from "./components/sections/Hero.jsx";
 import { About } from "./components/sections/About.jsx";
@@ -11,6 +12,13 @@ import { useScrollReveal } from "./lib/useScrollReveal.js";
 export default function App() {
   const { theme, toggle } = useTheme();
   useScrollReveal();
+
+  // Tell the index.html loader the app has mounted + painted.
+  useEffect(() => {
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => window.dispatchEvent(new Event("app:ready"))),
+    );
+  }, []);
 
   return (
     <>
