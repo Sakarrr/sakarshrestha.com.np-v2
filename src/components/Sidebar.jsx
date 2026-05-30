@@ -2,19 +2,16 @@ import { useState, useEffect } from "react";
 import { Icon } from "./Icon.jsx";
 import { useScrollSpy } from "../lib/useScrollSpy.js";
 import { NAV, SOCIALS, PROFILE } from "../data/content.js";
+import avatarImg from "../assets/images/avatar.png";
 
 function Avatar({ size = "md" }) {
-  const sz = size === "sm" ? "h-8 w-8 text-[13px]" : "h-11 w-11 text-[17px]";
+  const sz = size === "sm" ? "h-8 w-8" : "h-11 w-11";
   return (
-    <div
-      className={`${sz} rounded-full grid place-items-center font-display font-semibold text-white tracking-tight ring-1 ring-white/10 ring-offset-2 ring-offset-night`}
-      style={{
-        background:
-          "linear-gradient(135deg, rgb(var(--accent-rgb)), color-mix(in oklch, rgb(var(--accent-rgb)), #000 35%))",
-      }}
-    >
-      SS
-    </div>
+    <img
+      src={avatarImg}
+      alt="Avatar"
+      className={`${sz} rounded-full object-cover ring-1 ring-white/10 ring-offset-2 ring-offset-night`}
+    />
   );
 }
 

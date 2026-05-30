@@ -1,5 +1,6 @@
 import { SectionHead } from "../primitives.jsx";
 import { ABOUT_META } from "../../data/content.js";
+import portrait from "../../assets/images/potrait.png";
 
 export function About() {
   return (
@@ -34,15 +35,11 @@ export function About() {
         </div>
 
         <aside className="rounded-lg border border-ink/15 dark:border-chalk/15 bg-paper-soft dark:bg-night-soft p-5">
-          <div
-            className="aspect-[1/1.1] rounded grid place-items-center font-mono text-[11px] tracking-widest text-ink-mute dark:text-chalk-mute mb-4.5"
-            style={{
-              background:
-                "repeating-linear-gradient(45deg, rgb(var(--rule-rgb) / 0.18) 0 1px, transparent 1px 12px), linear-gradient(135deg, rgb(var(--accent-rgb) / 0.2), transparent 70%)",
-            }}
-          >
-            [ portrait · 1:1.1 ]
-          </div>
+          <img
+            src={portrait}
+            alt="Sakar Shrestha"
+            className="aspect-[1/1.1] rounded w-full object-cover object-top mb-4.5"
+          />
           <div className="grid gap-3 text-[13.5px] mt-5">
             {ABOUT_META.map(([k, v]) => (
               <div key={k} className="grid grid-cols-[90px_1fr] gap-3">
