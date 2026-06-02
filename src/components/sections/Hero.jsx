@@ -22,10 +22,12 @@ export function Hero() {
         platforms, websites, and WordPress ecosystems.
       </p>
 
-      <div className="inline-flex items-center gap-2 font-mono text-[13px] text-ink-soft dark:text-chalk-soft py-2 px-3.5 rounded-full border border-ink/20 dark:border-chalk/20 bg-paper-soft dark:bg-night-soft">
-        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-        <span>specialising in</span>
-        <span>
+      <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[13px] text-ink-soft dark:text-chalk-soft py-2 px-3.5 rounded-2xl border border-ink/20 dark:border-chalk/20 bg-paper-soft dark:bg-night-soft">
+        <span className="inline-flex items-center gap-2 whitespace-nowrap">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+          <span>specialising in</span>
+        </span>
+        <span className="whitespace-nowrap">
           {typed}
           <span className="caret">&nbsp;</span>
         </span>
