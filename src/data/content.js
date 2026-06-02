@@ -123,6 +123,7 @@ export const EXPERIENCE = [
     role: "Frontend Developer",
     co: "Danphe Software Labs",
     desc: "Building and scaling web application frontends, implementing dynamic functionalities and delivering responsive, user-centric interfaces.",
+    now: true,
   },
   {
     time: "2020 — 2024",
