@@ -183,7 +183,7 @@ export function Contact() {
           Built on AI-assisted foundations, refined and expanded through custom
           development. · 2026
         </span>
-        <span className="hidden sm:inline">Last updated · May 2026</span>
+        <span className="hidden sm:inline">Last updated · June 2026</span>
       </div>
     </section>
   );
