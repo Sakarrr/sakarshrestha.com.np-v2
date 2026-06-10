@@ -7,11 +7,11 @@ import { Projects } from "./components/sections/Projects.jsx";
 import { Experience } from "./components/sections/Experience.jsx";
 import { Contact } from "./components/sections/Contact.jsx";
 import { useTheme } from "./lib/useTheme.js";
-import { useScrollReveal } from "./lib/useScrollReveal.js";
+import { useGsapReveal } from "./lib/useGsapReveal.js";
 
 export default function App() {
   const { theme, toggle } = useTheme();
-  useScrollReveal();
+  useGsapReveal();
 
   // Tell the index.html loader the app has mounted + painted.
   useEffect(() => {
@@ -25,21 +25,13 @@ export default function App() {
       <div className="md:grid md:grid-cols-[304px_1fr] xl:grid-cols-[320px_1fr] min-h-screen">
         <Sidebar theme={theme} toggle={toggle} />
         <main className="px-5 md:px-10 lg:px-14 max-w-[calc(100% - 320px)]">
-          <div className="reveal">
-            <Hero />
-          </div>
+          <Hero />
           <div className="reveal">
             <About />
           </div>
-          <div className="reveal">
-            <Skills />
-          </div>
-          <div className="reveal">
-            <Projects />
-          </div>
-          <div className="reveal">
-            <Experience />
-          </div>
+          <Skills />
+          <Projects />
+          <Experience />
           <div className="reveal">
             <Contact />
           </div>

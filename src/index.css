@@ -124,28 +124,10 @@
   }
 }
 
-/* scroll reveal — default visible; JS adds .pre-reveal to off-screen
-   elements, then swaps to .revealing on intersection. Degrades to a
-   plain (un-animated) reveal if animations are unavailable. */
+/* scroll reveal — GSAP animates .reveal from opacity 0 on scroll;
+   default opacity: 1 ensures graceful degradation if JS is unavailable. */
 .reveal {
   opacity: 1;
-}
-.reveal.pre-reveal {
-  opacity: 0;
-  transform: translateY(18px);
-}
-.reveal.revealing {
-  animation: revealIn 0.8s var(--ease-snap) forwards;
-}
-@keyframes revealIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* project rows */
@@ -201,5 +183,38 @@
 
 /* theme-toggle thumb */
 .toggle-thumb {
-  transition: transform 0.3s var(--ease-snap);
+  transition: transform 0.35s var(--ease-snap);
 }
+
+/* ── Theme Toggle: animated icons ───────────────── */
+
+.tt-sun {
+  transition: transform 0.5s var(--ease-snap);
+  transform-origin: 50% 50%;
+}
+.tt-dark .tt-sun  { transform: rotate(90deg); }
+.tt-light .tt-sun { transform: rotate(0deg); }
+
+.tt-ray {
+  stroke-dasharray: 3;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.3s var(--ease-snap), opacity 0.25s ease;
+}
+.tt-dark .tt-ray  { stroke-dashoffset: 3; opacity: 0; }
+.tt-light .tt-ray { stroke-dashoffset: 0; opacity: 1; }
+
+.tt-ray:nth-child(2) { transition-delay: 0.00s; }
+.tt-ray:nth-child(3) { transition-delay: 0.03s; }
+.tt-ray:nth-child(4) { transition-delay: 0.06s; }
+.tt-ray:nth-child(5) { transition-delay: 0.09s; }
+.tt-ray:nth-child(6) { transition-delay: 0.02s; }
+.tt-ray:nth-child(7) { transition-delay: 0.05s; }
+.tt-ray:nth-child(8) { transition-delay: 0.08s; }
+.tt-ray:nth-child(9) { transition-delay: 0.01s; }
+
+.tt-moon {
+  transition: transform 0.5s var(--ease-snap), opacity 0.35s ease;
+  transform-origin: 50% 50%;
+}
+.tt-light .tt-moon { transform: rotate(-45deg) scale(0.5); opacity: 0; }
+.tt-dark .tt-moon  { transform: rotate(0deg)   scale(1);   opacity: 1; }

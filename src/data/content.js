@@ -7,12 +7,25 @@ export const PROFILE = {
   email: "ctha.sakar@gmail.com",
   role: "Frontend Developer · Kathmandu, Nepal",
   get availability() {
-    const d = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" }));
+    const d = new Date(
+      new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" }),
+    );
     const day = d.getDate();
-    const suffix = day === 1 || day === 21 || day === 31 ? "st" : day === 2 || day === 22 ? "nd" : day === 3 || day === 23 ? "rd" : "th";
+    const suffix =
+      day === 1 || day === 21 || day === 31
+        ? "st"
+        : day === 2 || day === 22
+          ? "nd"
+          : day === 3 || day === 23
+            ? "rd"
+            : "th";
     const month = d.toLocaleDateString("en-US", { month: "short" });
     const year = d.getFullYear();
-    const time = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
+    const time = d.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
     return `नमस्ते · ${day}${suffix} ${month} ${year} · ${time}`;
   },
   get copyright() {
@@ -115,7 +128,7 @@ export const PROJECTS = [
     n: "05",
     title: "ColorMag",
     sub: "Classic magazine-style theme built for WordPress.",
-    tech: ["Sass", "JaavScript", "jQuery", "PHP", "WordPress"],
+    tech: ["Sass", "JavaScript", "jQuery", "PHP", "WordPress"],
     color: "#1F2937",
   },
   {

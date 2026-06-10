@@ -18,28 +18,62 @@ function Avatar({ size = "md" }) {
 function ThemeToggle({ theme, toggle }) {
   const dark = theme === "dark";
   return (
-    <button
-      onClick={toggle}
+    <div
       role="switch"
       aria-checked={dark}
       aria-label="Toggle dark mode"
-      className="group relative flex items-center gap-2 h-9 w-full rounded-full border border-white/10 bg-white/[0.03] px-1.5 hover:bg-white/[0.06] transition-colors"
+      className={`group relative flex items-center gap-2 h-9 w-full rounded-full border border-white/10 bg-white/[0.03] px-1.5 hover:bg-white/[0.06] transition-colors ${dark ? "tt-dark" : "tt-light"}`}
     >
       <span
         className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-white/10 toggle-thumb"
         style={{ transform: dark ? "translateX(100%)" : "translateX(0)" }}
       />
-      <span
-        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 text-[11px] font-mono uppercase tracking-wider cursor-pointer ${!dark ? "text-white" : "text-chalk/50"}`}
+
+      <button
+        onClick={() => dark && toggle()}
+        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 text-[11px] font-mono uppercase tracking-wider ${!dark ? "cursor-default text-white" : "cursor-pointer text-chalk/50"}`}
       >
-        <Icon.Sun className="h-3.5 w-3.5" /> Light
-      </span>
-      <span
-        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 text-[11px] font-mono uppercase tracking-wider cursor-pointer ${dark ? "text-white" : "text-chalk/50"}`}
+        <svg
+          className="tt-sun h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <line className="tt-ray" x1="12" y1="2" x2="12" y2="5" />
+          <line className="tt-ray" x1="12" y1="19" x2="12" y2="22" />
+          <line className="tt-ray" x1="2" y1="12" x2="5" y2="12" />
+          <line className="tt-ray" x1="19" y1="12" x2="22" y2="12" />
+          <line className="tt-ray" x1="5" y1="5" x2="7.1" y2="7.1" />
+          <line className="tt-ray" x1="16.9" y1="16.9" x2="19" y2="19" />
+          <line className="tt-ray" x1="5" y1="19" x2="7.1" y2="16.9" />
+          <line className="tt-ray" x1="16.9" y1="7.1" x2="19" y2="5" />
+        </svg>
+        Light
+      </button>
+
+      <button
+        onClick={() => !dark && toggle()}
+        className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 text-[11px] font-mono uppercase tracking-wider ${dark ? "cursor-default text-white" : "cursor-pointer text-chalk/50"}`}
       >
-        <Icon.Moon className="h-3.5 w-3.5" /> Dark
-      </span>
-    </button>
+        <svg
+          className="tt-moon h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </svg>
+        Dark
+      </button>
+    </div>
   );
 }
 
