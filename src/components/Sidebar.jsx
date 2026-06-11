@@ -132,6 +132,31 @@ function SidebarBody({ active, onNav, theme, toggle }) {
       <NavList active={active} onNav={onNav} />
 
       <div className="flex flex-col gap-4 mt-6">
+        <div className="flex flex-col gap-1.5">
+          <a
+            href="/sakar-shrestha-cv.pdf"
+            download
+            className="inline-flex items-center justify-center gap-2 w-full h-9 rounded-full border border-white/15 font-mono text-[11.5px] uppercase tracking-wider text-chalk/60 hover:text-white hover:border-white/30 hover:bg-white/[0.06] transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 15V3M8 11l4 4 4-4M3 18h18v3H3z" />
+            </svg>
+            Download CV
+          </a>
+          <p className="text-center font-mono text-[10px] text-chalk/30 tracking-wide">
+            updated cv uploading soon
+          </p>
+        </div>
         <ThemeToggle theme={theme} toggle={toggle} />
         <div className="flex flex-wrap gap-1.5">
           {SOCIALS.map((s) => {

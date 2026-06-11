@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ──────────────────────────────────────────────────────────────────
    Class-based dark mode (toggled via `.dark` on <html>) instead of the
    Tailwind 4 default of prefers-color-scheme.
