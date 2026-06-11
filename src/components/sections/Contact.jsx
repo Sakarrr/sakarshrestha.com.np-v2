@@ -19,11 +19,12 @@ function emptyForm() {
 function ContactForm() {
   const [form, setForm] = useState(emptyForm);
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setError("Name, email and a short message are required.");
@@ -34,8 +35,29 @@ function ContactForm() {
       return;
     }
     setError("");
-    // TODO: Integrate backend to manage email flow.
-    setSent(true);
+    setLoading(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Could not send message. Check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (sent) {
@@ -62,7 +84,7 @@ function ContactForm() {
             setSent(false);
             setForm(emptyForm());
           }}
-          className="mt-6 font-mono text-[12px] uppercase tracking-wider text-accent hover:underline"
+          className="mt-6 font-mono text-[12px] uppercase tracking-wider text-accent hover:underline cursor-pointer"
         >
           ← Send another
         </button>
@@ -131,10 +153,11 @@ function ContactForm() {
         </span>
         <button
           type="submit"
-          className="cta-btn inline-flex items-center justify-center gap-3 py-3.5 px-5 rounded-full bg-ink text-paper dark:bg-chalk dark:text-night font-display font-medium text-[14.5px] cursor-pointer"
+          disabled={loading}
+          className="cta-btn inline-flex items-center justify-center gap-3 py-3.5 px-5 rounded-full bg-ink text-paper dark:bg-chalk dark:text-night font-display font-medium text-[14.5px] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Send message
-          <Icon.Arrow className="h-4 w-4" />
+          {loading ? "Sending…" : "Send message"}
+          {!loading && <Icon.Arrow className="h-4 w-4" />}
         </button>
       </div>
     </form>
