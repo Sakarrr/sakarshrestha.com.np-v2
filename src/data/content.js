@@ -82,63 +82,58 @@ export const ABOUT_META = [
 ];
 
 export const SKILLS = [
-  "JavaScript",
-  "React",
-  "HTML",
   "CSS / Sass",
-  "Tailwind",
-  "CSS Modules",
-  "Stimulus JS",
-  "Slim / ERB",
   "D3",
+  "HTML",
+  "JavaScript",
   "PHP",
+  "React",
+  "Slim / ERB",
+  "Stimulus JS",
+  "Supabase",
+  "Tailwind",
+  "TypeScript",
   "WordPress",
 ];
 
 export const PROJECTS = [
   {
-    n: "01",
+    title: "Nepal Med",
+    sub: "Pharmacy landing page & patients result database management system",
+    tech: ["Tailwind", "JavaScript", "TypeScript", "React", "Supabase"],
+    color: "#B45309",
+  },
+  {
     title: "Enterprise Client",
-    sub: "Scalable enterprise web app built for client-facing operations",
+    sub: "Dashboard and reporting tool for enterprise operations",
     tech: ["Slim / ERB", "JavaScript", "Tailwind", "Stimulus JS", "D3"],
     color: "#3B5BDB",
   },
   {
-    n: "02",
     title: "Pragyan Docs",
     sub: "Single-page landing site for a document management platform.",
     tech: ["React", "Tailwind", "Yjs"],
     color: "#E0521E",
   },
   {
-    n: "03",
     title: "Things Cyber",
     sub: "Multi-page website for cybersecurity and IT solutions.",
     tech: ["React", "Sass"],
     color: "#0F766E",
   },
   {
-    n: "04",
     title: "Magazine Blocks",
     sub: "Gutenberg blocks plugin for the WordPress ecosystem",
     tech: ["React", "PHP", "WordPress"],
     color: "#7C3AED",
   },
   {
-    n: "05",
     title: "ColorMag",
     sub: "Classic magazine-style theme built for WordPress.",
     tech: ["Sass", "JavaScript", "jQuery", "PHP", "WordPress"],
     color: "#1F2937",
   },
-  {
-    n: "06",
-    title: "Crazy Quiz Alarm",
-    sub: "Quiz-based alarm app developed during internship.",
-    tech: ["Flutter"],
-    color: "#B45309",
-  },
-];
+].map((p, i) => ({ ...p, n: String(i + 1).padStart(2, "0") }));
 
 export const EXPERIENCE = [
   {
