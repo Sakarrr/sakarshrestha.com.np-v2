@@ -28,6 +28,8 @@ jobs:
       # 4. Build the React + Tailwind app
       - name: Build project
         run: npm run build
+        env:
+          VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
 
       # 5. Deploy build output to cPanel via FTP
       - name: Deploy to cPanel via FTP
