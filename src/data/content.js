@@ -5,7 +5,7 @@ export const PROFILE = {
   firstName: "Sakar",
   handle: "",
   email: "ctha.sakar@gmail.com",
-  role: "Frontend Developer · Kathmandu, Nepal",
+  role: "Frontend Engineer · Kathmandu, Nepal",
   get availability() {
     const d = new Date(
       new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" }),

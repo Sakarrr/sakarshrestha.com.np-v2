@@ -1,6 +1,5 @@
 import { SectionHead } from "../primitives.jsx";
-import { ABOUT_META } from "../../data/content.js";
-import portrait from "../../assets/images/potrait.png";
+import { ABOUT_META, PROFILE } from "../../data/content.js";
 
 export function About() {
   return (
@@ -34,13 +33,29 @@ export function About() {
           </p>
         </div>
 
-        <aside className="rounded-lg border border-ink/15 dark:border-chalk/15 bg-paper-soft dark:bg-night-soft p-5">
-          <img
-            src={portrait}
-            alt="Sakar Shrestha"
-            className="aspect-[1/1.1] rounded w-full object-cover object-top mb-4.5"
-          />
-          <div className="grid gap-3 text-[13.5px] mt-5">
+        <aside className="rounded-lg border border-ink/15 dark:border-chalk/15 bg-paper-soft dark:bg-night-soft p-6 flex flex-col gap-6">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-ink-mute dark:text-chalk-mute">
+              Profile
+            </span>
+            <span className="inline-flex items-center gap-1.5 font-mono text-[10.5px] uppercase tracking-wider text-accent">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              Learning and Exploring
+            </span>
+          </div>
+
+          <div>
+            <div className="font-display font-semibold text-[26px] -tracking-[0.02em] text-ink dark:text-chalk">
+              {PROFILE.name}
+            </div>
+            <div className="font-mono text-[12.5px] text-ink-mute dark:text-chalk-mute mt-1.5">
+              {PROFILE.role}
+            </div>
+          </div>
+
+          <div className="h-px bg-ink/10 dark:bg-chalk/10" />
+
+          <div className="grid gap-3 text-[13.5px]">
             {ABOUT_META.map(([k, v]) => (
               <div key={k} className="grid grid-cols-[90px_1fr] gap-3">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-ink-mute dark:text-chalk-mute pt-0.5">
