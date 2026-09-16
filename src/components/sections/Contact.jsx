@@ -174,7 +174,7 @@ export function Contact() {
       <h2 className="font-display font-medium text-[clamp(40px,5.6vw,72px)] -tracking-[0.03em] leading-[1.02] mt-5 mb-6 text-balance">
         Got something{" "}
         <em className="accent-italic font-serif italic font-normal text-accent">
-          worth building?
+          interesting in mind?
         </em>
         <br /> Let's talk.
       </h2>

@@ -7,29 +7,25 @@ export function About() {
       id="about"
       className="py-24 border-t border-ink/10 dark:border-chalk/10"
     >
-      <SectionHead num="02 / About" title="A short version" />
+      <SectionHead num="02 / About" title="A little about me" />
       <div className="grid md:grid-cols-[1.4fr_1fr] gap-12 items-start">
         <div className="space-y-4 text-[17px] leading-relaxed text-ink-soft dark:text-chalk-soft text-pretty">
           <p className="font-display text-[22px] leading-snug -tracking-[0.01em] text-ink dark:text-chalk">
-            नमस्ते - I’m Sakar, a frontend developer focused on turning design
-            into polished, responsive interfaces. I care about the details —
-            layout rhythm, smooth interactions, clean component architecture,
-            and experiences that feel effortless to use.
+            नमस्ते — I’m Sakar, a frontend developer who enjoys turning designs
+            into working interfaces.
           </p>
           <p>
-            Most of my work sits between design and frontend engineering —
-            building enterprise platforms, websites, WordPress products, and
-            React applications that stay polished beyond the mockup stage. I
-            enjoy translating design systems and UI concepts into responsive,
-            maintainable interfaces that work seamlessly with real users and
-            real-world content.
+            I mainly work with React and JavaScript, and I also have a
+            background in WordPress, where I've built themes and Gutenberg
+            plugins. I enjoy the process of taking a design, making it
+            responsive, figuring out the tricky parts, and seeing it come
+            together in the browser.
           </p>
           <p>
-            Away from the screen, I’m usually found watching football, playing
-            PC games, or catching up on anime. Lately, I’ve been fascinated by
-            AI and the way it’s reshaping how we create, build, and solve
-            problems — constantly discovering new things it can help us do
-            better.
+            Right now, I'm focusing on getting better at React and learning
+            TypeScript properly. I'm also experimenting with AI agents and LLMs,
+            mostly to understand how they work and find ways to make everyday
+            development a little less repetitive.
           </p>
         </div>
 

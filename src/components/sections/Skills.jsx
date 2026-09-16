@@ -24,12 +24,19 @@ export function Skills() {
       tl.fromTo(
         headRef.current,
         { opacity: 0, y: 18 },
-        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }
+        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
       ).fromTo(
         Array.from(chipsRef.current.children),
         { opacity: 0, y: 12, scale: 0.94 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "power2.out", stagger: 0.035 },
-        "-=0.2"
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.38,
+          ease: "power2.out",
+          stagger: 0.035,
+        },
+        "-=0.2",
       );
     });
 
@@ -43,10 +50,14 @@ export function Skills() {
       className="py-24 border-t border-ink/10 dark:border-chalk/10"
     >
       <div ref={headRef}>
-        <SectionHead num="03 / Stack" title="Things I reach for" />
+        <SectionHead num="03 / Stack" title="Tools I work with" />
         <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[60ch] mb-7 text-pretty">
-          Some I love, some I tolerate, all I've shipped to production. Listed alphabetically
-          because every other order felt like a personality test.
+          These are the technologies I’ve worked with over the years. Some I use
+          regularly, others have been part of different projects along the way.
+        </p>
+        <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[60ch] mb-7 text-pretty">
+          Right now, React is where most of my attention goes, with TypeScript
+          being the next skill I'm actively working on.
         </p>
       </div>
       <div ref={chipsRef} className="flex flex-wrap gap-2">
