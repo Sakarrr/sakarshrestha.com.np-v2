@@ -1,13 +1,23 @@
 import { useState, useEffect } from "react";
 
+// Optional timing settings (all in milliseconds).
+type TypedOptions = {
+  typeMs?: number;
+  eraseMs?: number;
+  holdMs?: number;
+};
+
 // Cycles through `words`, typing then erasing each one.
-export function useTyped(words, { typeMs = 70, eraseMs = 35, holdMs = 1400 } = {}) {
+export function useTyped(
+  words: string[],
+  { typeMs = 70, eraseMs = 35, holdMs = 1400 }: TypedOptions = {},
+): string {
   const [out, setOut] = useState("");
   const [idx, setIdx] = useState(0);
-  const [phase, setPhase] = useState("typing"); // typing | erasing
+  const [phase, setPhase] = useState<"typing" | "erasing">("typing");
 
   useEffect(() => {
-    let t;
+    let t: ReturnType<typeof setTimeout> | undefined;
     const target = words[idx % words.length];
     if (phase === "typing") {
       if (out.length < target.length) {

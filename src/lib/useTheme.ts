@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import type { Theme } from "../types";
 
 // Theme state persisted to localStorage. Default: dark.
 export function useTheme() {
-  const [theme, setTheme] = useState(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
     try {
       const saved = localStorage.getItem("portfolio-theme");
       if (saved === "light" || saved === "dark") return saved;

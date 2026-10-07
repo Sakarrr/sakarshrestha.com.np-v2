@@ -1,10 +1,25 @@
 import { useState, useEffect } from "react";
-import { Icon } from "./Icon.jsx";
-import { useScrollSpy } from "../lib/useScrollSpy.js";
-import { NAV, SOCIALS, PROFILE } from "../data/content.js";
+import { Icon } from "./Icon";
+import { useScrollSpy } from "../lib/useScrollSpy";
+import { NAV, SOCIALS, PROFILE } from "../data/content";
 import avatarImg from "../assets/images/avatar.png";
+import type { Theme } from "../types";
 
-function Avatar({ size = "md" }) {
+// Props shared by the components that show the theme switch.
+type ThemeProps = {
+  theme: Theme;
+  toggle: () => void; // a function that takes nothing and returns nothing
+};
+
+type NavListProps = {
+  active: string;
+  onNav?: (id: string) => void; // optional: only the mobile drawer passes it
+};
+
+// `&` combines two types into one.
+type SidebarBodyProps = NavListProps & ThemeProps;
+
+function Avatar({ size = "md" }: { size?: "sm" | "md" }) {
   const sz = size === "sm" ? "h-8 w-8" : "h-11 w-11";
   return (
     <img
@@ -15,7 +30,7 @@ function Avatar({ size = "md" }) {
   );
 }
 
-function ThemeToggle({ theme, toggle }) {
+function ThemeToggle({ theme, toggle }: ThemeProps) {
   const dark = theme === "dark";
   return (
     <div
@@ -77,7 +92,7 @@ function ThemeToggle({ theme, toggle }) {
   );
 }
 
-function NavList({ active, onNav }) {
+function NavList({ active, onNav }: NavListProps) {
   return (
     <nav className="flex flex-col flex-1" aria-label="Sections">
       {NAV.map((item) => {
@@ -109,7 +124,7 @@ function NavList({ active, onNav }) {
   );
 }
 
-function SidebarBody({ active, onNav, theme, toggle }) {
+function SidebarBody({ active, onNav, theme, toggle }: SidebarBodyProps) {
   return (
     <>
       <div className="flex items-center gap-3 mb-9">
@@ -183,7 +198,7 @@ function SidebarBody({ active, onNav, theme, toggle }) {
   );
 }
 
-export function Sidebar({ theme, toggle }) {
+export function Sidebar({ theme, toggle }: ThemeProps) {
   const active = useScrollSpy(NAV.map((n) => n.id));
   const [drawer, setDrawer] = useState(false);
 

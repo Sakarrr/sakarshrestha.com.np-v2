@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function useGsapReveal() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => {
         gsap.fromTo(
           el,
           { opacity: 0, y: 24 },

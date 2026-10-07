@@ -1,14 +1,22 @@
 import { useState } from "react";
-import { Eyebrow } from "../primitives.jsx";
-import { Icon } from "../Icon.jsx";
-import { PROFILE, CONTACT_LINKS } from "../../data/content.js";
+import type { ChangeEvent, FormEvent } from "react";
+import { Eyebrow } from "../primitives";
+import { Icon } from "../Icon";
+import { PROFILE, CONTACT_LINKS } from "../../data/content";
 
 const FIELD =
   "w-full bg-transparent border-0 border-b border-ink/20 dark:border-chalk/20 py-3 px-0 text-[15px] text-ink dark:text-chalk placeholder:text-ink-mute dark:placeholder:text-chalk-mute focus:outline-none focus:border-accent transition-colors";
 const LABEL =
   "font-mono text-[10.5px] uppercase tracking-wider text-ink-mute dark:text-chalk-mute mb-1.5 flex justify-between items-center";
 
-function emptyForm() {
+// The shape of the contact form data.
+type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+function emptyForm(): ContactFormData {
   return {
     name: "",
     email: "",
@@ -22,9 +30,13 @@ function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  // `keyof ContactFormData` means k must be "name", "email" or "message".
+  const set =
+    (k: keyof ContactFormData) =>
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = async (e) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setError("Name, email and a short message are required.");
@@ -133,7 +145,7 @@ function ContactForm() {
           <span>03</span>
         </div>
         <textarea
-          rows="4"
+          rows={4}
           value={form.message}
           onChange={set("message")}
           placeholder="A line or two about the project, timeline, what you're hoping for…"

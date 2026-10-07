@@ -1,4 +1,5 @@
-import { Icon } from "../components/Icon.jsx";
+import { Icon } from "../components/Icon";
+import type { NavItem, Social, HeroStat, Project, Job } from "../types";
 
 export const PROFILE = {
   name: "Sakar Shrestha",
@@ -33,7 +34,7 @@ export const PROFILE = {
   },
 };
 
-export const NAV = [
+export const NAV: NavItem[] = [
   { id: "hero", num: "01", label: "Index" },
   { id: "about", num: "02", label: "About" },
   { id: "skills", num: "03", label: "Stack" },
@@ -42,7 +43,7 @@ export const NAV = [
   { id: "contact", num: "06", label: "Contact" },
 ];
 
-export const SOCIALS = [
+export const SOCIALS: Social[] = [
   {
     k: "gh",
     label: "GitHub",
@@ -64,24 +65,25 @@ export const SOCIALS = [
   },
 ];
 
-export const TYPED_WORDS = [
+export const TYPED_WORDS: string[] = [
   "JavaScript, React & WordPress.",
   "design systems at scale.",
   "interfaces that feel like tools.",
   "the boring stuff, done well.",
 ];
 
-export const HERO_STATS = [
+export const HERO_STATS: HeroStat[] = [
   { v: "5y", l: "Shipping" },
   { v: "10+", l: "Projects" },
 ];
 
-export const ABOUT_META = [
+// Each item is a [label, value] pair (called a "tuple").
+export const ABOUT_META: [string, string][] = [
   ["Based", "Kathmandu, Nepal"],
   ["Languages", "NP, EN"],
 ];
 
-export const SKILLS = [
+export const SKILLS: string[] = [
   "CSS / Sass",
   "D3",
   "HTML",
@@ -96,7 +98,8 @@ export const SKILLS = [
   "WordPress",
 ];
 
-export const PROJECTS = [
+// `Omit<Project, "n">` = a Project without the "n" key (we add it below with .map).
+const PROJECT_LIST: Omit<Project, "n">[] = [
   {
     title: "Nepal Med",
     sub: "Pharmacy landing page & patients result database management system",
@@ -133,9 +136,14 @@ export const PROJECTS = [
     tech: ["Sass", "JavaScript", "jQuery", "PHP", "WordPress"],
     color: "#1F2937",
   },
-].map((p, i) => ({ ...p, n: String(i + 1).padStart(2, "0") }));
+];
 
-export const EXPERIENCE = [
+export const PROJECTS: Project[] = PROJECT_LIST.map((p, i) => ({
+  ...p,
+  n: String(i + 1).padStart(2, "0"),
+}));
+
+export const EXPERIENCE: Job[] = [
   {
     time: "2024 — Now",
     role: "Frontend Developer",
@@ -157,7 +165,8 @@ export const EXPERIENCE = [
   },
 ];
 
-export const CONTACT_LINKS = [
+// Each item is [label, display text, url].
+export const CONTACT_LINKS: [string, string, string][] = [
   [
     "Linkedin",
     "in/sakarshrestha97/",

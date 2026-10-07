@@ -6,7 +6,7 @@ export function useScrollReveal() {
     if (!els.length) return;
 
     const vh = window.innerHeight || document.documentElement.clientHeight;
-    const hidden = [];
+    const hidden: Element[] = [];
     els.forEach((el) => {
       const r = el.getBoundingClientRect();
       if (r.top > vh * 0.85) {

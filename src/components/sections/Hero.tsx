@@ -1,12 +1,12 @@
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import { Eyebrow } from "../primitives.jsx";
-import { useTyped } from "../../lib/useTyped.js";
-import { TYPED_WORDS, HERO_STATS, PROFILE } from "../../data/content.js";
+import { Eyebrow } from "../primitives";
+import { useTyped } from "../../lib/useTyped";
+import { TYPED_WORDS, HERO_STATS, PROFILE } from "../../data/content";
 
 export function Hero() {
   const typed = useTyped(TYPED_WORDS);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {

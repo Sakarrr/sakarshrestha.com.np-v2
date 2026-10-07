@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 
 // Highlights the nav item whose section is currently in view.
-export function useScrollSpy(ids) {
+export function useScrollSpy(ids: string[]): string {
   const [active, setActive] = useState(ids[0]);
 
   useEffect(() => {
-    const els = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    const els = ids
+      .map((id) => document.getElementById(id))
+      .filter((el) => el !== null); // keep only elements that were found
     if (!els.length) return;
 
     const obs = new IntersectionObserver(

@@ -1,5 +1,5 @@
-import { SectionHead } from "../primitives.jsx";
-import { ABOUT_META, PROFILE } from "../../data/content.js";
+import { SectionHead } from "../primitives";
+import { ABOUT_META, PROFILE } from "../../data/content";
 
 export function About() {
   return (

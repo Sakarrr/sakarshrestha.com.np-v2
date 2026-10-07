@@ -1,4 +1,11 @@
-export function SectionHead({ num, title }) {
+import type { ReactNode } from "react";
+
+type SectionHeadProps = {
+  num: string;
+  title: string;
+};
+
+export function SectionHead({ num, title }: SectionHeadProps) {
   return (
     <header className="flex items-baseline gap-4 mb-10">
       <span className="font-mono text-caps uppercase text-ink-mute dark:text-chalk-mute">
@@ -12,7 +19,12 @@ export function SectionHead({ num, title }) {
   );
 }
 
-export function Eyebrow({ children }) {
+type EyebrowProps = {
+  // ReactNode = anything React can render (text, elements, numbers, ...).
+  children: ReactNode;
+};
+
+export function Eyebrow({ children }: EyebrowProps) {
   return (
     <div className="inline-flex items-center gap-2.5 font-mono text-caps uppercase text-ink-mute dark:text-chalk-mute">
       <span className="w-6 h-px bg-current opacity-50" />

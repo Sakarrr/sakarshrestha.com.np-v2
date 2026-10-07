@@ -1,18 +1,20 @@
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SectionHead } from "../primitives.jsx";
-import { Icon } from "../Icon.jsx";
-import { PROJECTS } from "../../data/content.js";
+import { SectionHead } from "../primitives";
+import { Icon } from "../Icon";
+import { PROJECTS } from "../../data/content";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function Projects() {
-  const sectionRef = useRef(null);
-  const headRef = useRef(null);
-  const rowsRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
+  const rowsRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
+    const list = rowsRef.current;
+    if (!list) return; // ref is empty until the element is on the page
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -27,7 +29,7 @@ export function Projects() {
         { opacity: 0, y: 18 },
         { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }
       ).fromTo(
-        Array.from(rowsRef.current.children),
+        Array.from(list.children),
         { opacity: 0, y: 16 },
         { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", stagger: 0.09 },
         "-=0.2"
