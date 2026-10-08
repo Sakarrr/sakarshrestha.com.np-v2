@@ -191,8 +191,8 @@ export function Contact() {
         <br /> Let's talk.
       </h2>
       <p className="text-[17px] text-ink-soft dark:text-chalk-soft max-w-[50ch] mb-10">
-        Open to ideas, collaborations, and interesting things on the web—say
-        hello.
+        Whether it's a frontend project, a WordPress idea, or just something
+        you'd like to discuss, feel free to reach out.
       </p>
 
       <ContactForm />

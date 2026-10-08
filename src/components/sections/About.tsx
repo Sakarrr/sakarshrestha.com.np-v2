@@ -15,17 +15,30 @@ export function About() {
             into working interfaces.
           </p>
           <p>
-            I mainly work with React and JavaScript, and I also have a
-            background in WordPress, where I've built themes and Gutenberg
-            plugins. I enjoy the process of taking a design, making it
-            responsive, figuring out the tricky parts, and seeing it come
-            together in the browser.
+            Most of my work has been around frontend applications and WordPress
+            products. I enjoy taking a design, figuring out how it should work
+            across different screens, and turning it into something that feels
+            right in the browser. A lot of the fun is in the details — building
+            reusable components, getting interactions right, and figuring out
+            the problems that aren't always obvious from the design.
           </p>
           <p>
-            Right now, I'm focusing on getting better at React and learning
-            TypeScript properly. I'm also experimenting with AI agents and LLMs,
-            mostly to understand how they work and find ways to make everyday
-            development a little less repetitive.
+            I started out working heavily with WordPress, building themes and
+            Gutenberg plugins, including a dependent theme and plugin that I
+            built from scratch. That experience gave me a solid foundation in
+            building and maintaining real web products.
+          </p>
+          <p>
+            These days, I'm putting more of my focus into JavaScript and React.
+            I'm also learning TypeScript properly and working toward becoming a
+            stronger frontend engineer, especially when it comes to writing
+            maintainable code and understanding how larger applications should
+            be structured.
+          </p>
+          <p>
+            I'm also exploring LLMs and AI agents. Mostly out of curiosity — I
+            want to understand how they work and find useful ways to automate
+            some of the repetitive parts of development.
           </p>
         </div>
 

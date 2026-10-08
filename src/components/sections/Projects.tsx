@@ -27,12 +27,12 @@ export function Projects() {
       tl.fromTo(
         headRef.current,
         { opacity: 0, y: 18 },
-        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }
+        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
       ).fromTo(
         Array.from(list.children),
         { opacity: 0, y: 16 },
         { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", stagger: 0.09 },
-        "-=0.2"
+        "-=0.2",
       );
     });
 
@@ -46,7 +46,11 @@ export function Projects() {
       className="py-24 border-t border-ink/10 dark:border-chalk/10"
     >
       <div ref={headRef}>
-        <SectionHead num="04 / Works" title="Six things, recently" />
+        <SectionHead num="04 / Works" title="Selected work" />
+        <p className="text-[17px] text-ink-soft dark:text-chalk-soft max-w-[80ch] mb-10">
+          A mix of frontend applications, React projects, and WordPress products
+          I've worked on.
+        </p>
       </div>
 
       <div ref={rowsRef} className="flex flex-col">

@@ -66,8 +66,10 @@ export function Experience() {
                   {e.role}
                 </div>
                 <div className="text-[13.5px] text-accent mt-0.5">{e.co}</div>
-                <div className="text-[14.5px] text-ink-soft dark:text-chalk-soft mt-2.5 max-w-[60ch]">
-                  {e.desc}
+                <div className="text-[14.5px] text-ink-soft dark:text-chalk-soft mt-2.5 max-w-[60ch] space-y-3">
+                  {e.desc.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
                 </div>
               </div>
             </div>

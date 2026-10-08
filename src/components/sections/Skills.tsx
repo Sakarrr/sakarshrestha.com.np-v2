@@ -52,25 +52,21 @@ export function Skills() {
       className="py-24 border-t border-ink/10 dark:border-chalk/10"
     >
       <div ref={headRef}>
-        <SectionHead num="03 / Stack" title="Tools I work with" />
+        <SectionHead num="03 / Stack" title="What I'm focusing on" />
         <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[60ch] mb-7 text-pretty">
-          These are the technologies I’ve worked with over the years. Some I use
-          regularly, others have been part of different projects along the way.
+          <b className="block">Core</b> JavaScript · React · TypeScript
         </p>
         <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[60ch] mb-7 text-pretty">
-          Right now, React is where most of my attention goes, with TypeScript
-          being the next skill I'm actively working on.
+          <b className="block">Frontend</b> HTML · CSS · SCSS · Tailwind CSS
         </p>
-      </div>
-      <div ref={chipsRef} className="flex flex-wrap gap-2">
-        {SKILLS.map((s) => (
-          <span
-            key={s}
-            className="chip font-mono text-[12.5px] py-1.5 px-3 rounded-full border border-ink/20 dark:border-chalk/20 bg-paper-soft dark:bg-night-soft text-ink-soft dark:text-chalk-soft"
-          >
-            {s}
-          </span>
-        ))}
+        <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[60ch] mb-7 text-pretty">
+          <b className="block">Background</b> WordPress · PHP · Gutenberg ·
+          Theme & Plugin Development
+        </p>
+        <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[60ch] mb-7 text-pretty">
+          <b className="block">Exploring</b> LLMs · AI Agents · Developer
+          Automation
+        </p>
       </div>
     </section>
   );

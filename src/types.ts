@@ -38,6 +38,6 @@ export type Job = {
   time: string;
   role: string;
   co: string;
-  desc: string;
+  desc: string[]; // one string per paragraph
   now?: boolean; // the `?` means this key is optional
 };

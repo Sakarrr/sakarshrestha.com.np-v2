@@ -83,20 +83,6 @@ export const ABOUT_META: [string, string][] = [
   ["Languages", "NP, EN"],
 ];
 
-export const SKILLS: string[] = [
-  "CSS / Sass",
-  "D3",
-  "HTML",
-  "JavaScript",
-  "PHP",
-  "React",
-  "Slim / ERB",
-  "Stimulus JS",
-  "Supabase",
-  "Tailwind",
-  "TypeScript",
-  "WordPress",
-];
 
 // `Omit<Project, "n">` = a Project without the "n" key (we add it below with .map).
 const PROJECT_LIST: Omit<Project, "n">[] = [
@@ -148,20 +134,30 @@ export const EXPERIENCE: Job[] = [
     time: "2024 — Now",
     role: "Frontend Developer",
     co: "Danphe Software Labs",
-    desc: "Building and scaling web application frontends, implementing dynamic functionalities and delivering responsive, user-centric interfaces.",
+    desc: [
+      "I work on the frontend of a survey and data visualization application. The platform covers the full survey workflow, from creating and sending surveys to working with the collected data and presenting it through different graphs and visualizations.",
+      "My work mainly involves JavaScript, Stimulus.js, D3.js, Tailwind CSS, Slim, and MJML for email templates. The application has a Rails backend, so I also have some exposure to Rails while working with the frontend.",
+    ],
     now: true,
   },
   {
     time: "2020 — 2024",
     role: "WordPress Developer",
     co: "ThemeGrill Pvt. Ltd.",
-    desc: "Developed custom WordPress themes and a blocks plugin using PHP, JavaScript, React and WordPress, taking ownership of 2 themes and a plugin, and contributing to reusable CMS components.",
+    desc: [
+      "I worked on WordPress themes and Gutenberg plugins, building features, fixing issues, and keeping products up to date with newer WordPress technologies.",
+      "I also worked on a dependent theme and plugin combination built from scratch, where both products needed to work together as a complete solution.",
+    ],
   },
   {
     time: "2019 — 2019",
     role: "Intern Developer",
     co: "Official Future Tech",
-    desc: "Built and maintained Flutter mobile applications during an early-stage internship, contributing to new app development and supporting internal company products.",
+    desc: [
+      "I worked on Flutter mobile applications, contributing to new app development and helping maintain internal company products.",
+
+      "It was an early step in my development career and gave me practical experience working on real applications and understanding a development workflow.,",
+    ],
   },
 ];
 
