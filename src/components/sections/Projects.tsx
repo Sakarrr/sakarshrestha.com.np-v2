@@ -47,7 +47,7 @@ export function Projects() {
     >
       <div ref={headRef}>
         <SectionHead num="04 / Works" title="Selected work" />
-        <p className="text-[17px] text-ink-soft dark:text-chalk-soft max-w-[80ch] mb-10">
+        <p className="text-[17px] text-ink-soft dark:text-chalk-soft max-w-[40em] -mt-2 mb-8 text-pretty">
           A mix of frontend applications, React projects, and WordPress products
           I've worked on.
         </p>

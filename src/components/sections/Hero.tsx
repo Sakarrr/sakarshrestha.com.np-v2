@@ -66,16 +66,17 @@ export function Hero() {
         </em>
         .
       </h1>
-      <p className="hero-bio text-[clamp(17px,1.6vw,19px)] text-ink-soft dark:text-chalk-soft max-w-[56ch] mb-10 text-pretty">
-        I build responsive web applications from designs, with a focus on clean
-        components, thoughtful interactions, and solving the frontend problems
-        that come with building for the real world.
-      </p>
-      <p className="hero-bio text-[clamp(17px,1.6vw,19px)] text-ink-soft dark:text-chalk-soft max-w-[56ch] mb-10 text-pretty">
-        {" "}
-        I mainly work with JavaScript and React, and I'm currently going deeper
-        into TypeScript and modern frontend engineering.
-      </p>
+      <div className="hero-bio text-[clamp(17px,1.6vw,19px)] leading-relaxed text-ink-soft dark:text-chalk-soft max-w-[32em] mb-10 space-y-4 text-pretty">
+        <p>
+          I build responsive web applications from designs, with a focus on
+          clean components, thoughtful interactions, and solving the frontend
+          problems that come with building for the real world.
+        </p>
+        <p>
+          I mainly work with JavaScript and React, and I'm currently going
+          deeper into TypeScript and modern frontend engineering.
+        </p>
+      </div>
 
       <div className="hero-badge inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[13px] text-ink-soft dark:text-chalk-soft py-2 px-3.5 rounded-2xl border border-ink/20 dark:border-chalk/20 bg-paper-soft dark:bg-night-soft">
         <span className="inline-flex items-center gap-2 whitespace-nowrap">

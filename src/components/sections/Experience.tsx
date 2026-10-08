@@ -45,7 +45,7 @@ export function Experience() {
       className="py-24 border-t border-ink/10 dark:border-chalk/10"
     >
       <div ref={headRef}>
-        <SectionHead num="06 / Experience" title="A working résumé" />
+        <SectionHead num="05 / Experience" title="A working résumé" />
       </div>
       <div className="pl-4 relative">
         <span className="absolute left-0 top-2 bottom-2 w-px bg-ink/20 dark:bg-chalk/20" />
@@ -66,7 +66,7 @@ export function Experience() {
                   {e.role}
                 </div>
                 <div className="text-[13.5px] text-accent mt-0.5">{e.co}</div>
-                <div className="text-[14.5px] text-ink-soft dark:text-chalk-soft mt-2.5 max-w-[60ch] space-y-3">
+                <div className="text-[14.5px] text-ink-soft dark:text-chalk-soft leading-relaxed mt-2.5 max-w-[36em] space-y-3 text-pretty">
                   {e.desc.map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}

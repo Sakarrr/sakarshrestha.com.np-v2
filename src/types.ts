@@ -26,6 +26,11 @@ export type HeroStat = {
   l: string; // label, e.g. "Shipping"
 };
 
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
 export type Project = {
   n: string; // number, e.g. "01"
   title: string;

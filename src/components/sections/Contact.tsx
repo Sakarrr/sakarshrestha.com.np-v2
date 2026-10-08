@@ -86,7 +86,7 @@ function ContactForm() {
         <h3 className="font-display text-[24px] -tracking-[0.015em] mb-2">
           Thanks, {form.name.split(" ")[0]} — message received.
         </h3>
-        <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[44ch]">
+        <p className="text-[15px] text-ink-soft dark:text-chalk-soft max-w-[26em]">
           I usually reply within 48 hours from{" "}
           <span className="text-ink dark:text-chalk">{form.email}</span>. In the
           meantime, feel free to peek at the work above.
@@ -190,7 +190,7 @@ export function Contact() {
         </em>
         <br /> Let's talk.
       </h2>
-      <p className="text-[17px] text-ink-soft dark:text-chalk-soft max-w-[50ch] mb-10">
+      <p className="text-[17px] text-ink-soft dark:text-chalk-soft max-w-[30em] mb-10 text-pretty">
         Whether it's a frontend project, a WordPress idea, or just something
         you'd like to discuss, feel free to reach out.
       </p>
@@ -213,7 +213,7 @@ export function Contact() {
         ))}
       </div>
 
-      <div className="mt-14 pt-8 border-t border-ink/10 dark:border-chalk/10 flex justify-between items-center font-mono text-[11.5px] text-ink-mute dark:text-chalk-mute tracking-wide">
+      <div className="mt-14 pt-8 border-t border-ink/10 dark:border-chalk/10 flex justify-between items-center gap-6 font-mono text-[11.5px] text-ink-mute dark:text-chalk-mute tracking-wide">
         <span>
           Built on AI-assisted foundations, refined and expanded through custom
           development. · 2026

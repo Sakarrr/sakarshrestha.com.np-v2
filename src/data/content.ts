@@ -1,12 +1,19 @@
 import { Icon } from "../components/Icon";
-import type { NavItem, Social, HeroStat, Project, Job } from "../types";
+import type {
+  NavItem,
+  Social,
+  HeroStat,
+  SkillGroup,
+  Project,
+  Job,
+} from "../types";
 
 export const PROFILE = {
   name: "Sakar Shrestha",
   firstName: "Sakar",
   handle: "",
   email: "ctha.sakar@gmail.com",
-  role: "Frontend Engineer · Kathmandu, Nepal",
+  role: "Frontend Developer · Kathmandu, Nepal",
   get availability() {
     const d = new Date(
       new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" }),
@@ -83,6 +90,15 @@ export const ABOUT_META: [string, string][] = [
   ["Languages", "NP, EN"],
 ];
 
+export const SKILL_GROUPS: SkillGroup[] = [
+  { label: "Core", items: ["JavaScript", "React", "TypeScript"] },
+  { label: "Frontend", items: ["HTML", "CSS", "SCSS", "Tailwind CSS"] },
+  {
+    label: "Background",
+    items: ["WordPress", "PHP", "Gutenberg", "Theme & Plugin Development"],
+  },
+  { label: "Exploring", items: ["LLMs", "AI Agents", "Developer Automation"] },
+];
 
 // `Omit<Project, "n">` = a Project without the "n" key (we add it below with .map).
 const PROJECT_LIST: Omit<Project, "n">[] = [
@@ -156,7 +172,7 @@ export const EXPERIENCE: Job[] = [
     desc: [
       "I worked on Flutter mobile applications, contributing to new app development and helping maintain internal company products.",
 
-      "It was an early step in my development career and gave me practical experience working on real applications and understanding a development workflow.,",
+      "It was an early step in my development career and gave me practical experience working on real applications and understanding a development workflow.",
     ],
   },
 ];

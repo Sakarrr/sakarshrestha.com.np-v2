@@ -24,7 +24,7 @@ export default function App() {
     <>
       <div className="md:grid md:grid-cols-[304px_1fr] xl:grid-cols-[320px_1fr] min-h-screen">
         <Sidebar theme={theme} toggle={toggle} />
-        <main className="px-5 md:px-10 lg:px-14 max-w-[calc(100% - 320px)]">
+        <main className="min-w-0 px-5 md:px-10 lg:px-14">
           <Hero />
           <div className="reveal">
             <About />

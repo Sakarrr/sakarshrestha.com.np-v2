@@ -103,7 +103,7 @@ html {
 /* blinking caret on the typed headline */
 .caret {
   display: inline-block;
-  width: 0.55ch;
+  width: 0.35em;
   background: currentColor;
   margin-left: 2px;
   animation: blink 1s steps(1) infinite;

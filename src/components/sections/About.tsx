@@ -31,7 +31,7 @@ export function About() {
           <p>
             These days, I'm putting more of my focus into JavaScript and React.
             I'm also learning TypeScript properly and working toward becoming a
-            stronger frontend engineer, especially when it comes to writing
+            stronger frontend developer, especially when it comes to writing
             maintainable code and understanding how larger applications should
             be structured.
           </p>
@@ -42,7 +42,7 @@ export function About() {
           </p>
         </div>
 
-        <aside className="rounded-lg border border-ink/15 dark:border-chalk/15 bg-paper-soft dark:bg-night-soft p-6 flex flex-col gap-6">
+        <aside className="md:sticky md:top-8 rounded-lg border border-ink/15 dark:border-chalk/15 bg-paper-soft dark:bg-night-soft p-6 flex flex-col gap-6">
           <div className="flex items-center justify-between">
             <span className="font-mono text-[11px] uppercase tracking-wider text-ink-mute dark:text-chalk-mute">
               Profile
